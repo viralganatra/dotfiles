@@ -1,0 +1,52 @@
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  amend = commit --amend --all
+  difffrommaster = diff master...
+  whoami = config user.email
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = "vim"
+
+[color]
+  ui = auto
+
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+  newMoved = cyan
+  oldMoved = blue
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[include]
+  path = ~/.gitconfig.local
+
+[fetch]
+	prune = true
+
+[push]
+	default = current
+	followTags = true

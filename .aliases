@@ -1,0 +1,14 @@
+alias ll='ls -la'
+
+# AWS
+alias aws-login='sh ~/.aws/aws-cres.sh'
+alias aws-bastion=$'aws ec2 describe-instances --profile test7 --region eu-west-1 --filters "Name=tag-value, Values=*-bastion" --query "Reservations[*].Instances[0].{Name: Tags[?Key==\'Name\'] | [0].Value, IP: PublicIpAddress}" --output text | sort -k 2.3'
+
+# Git
+alias gits='git status'
+alias gitc='git commit'
+alias gitpr='echo git pull --rebase origin master; git pull --rebase origin master'
+alias gitpf='echo git push --force-with-lease; git push --force-with-lease'
+alias gitcleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias gitlock='rm -f ./.git/index.lock'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
