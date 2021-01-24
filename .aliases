@@ -12,3 +12,9 @@ alias gitpf='echo git push --force-with-lease; git push --force-with-lease'
 alias gitcleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 alias gitlock='rm -f ./.git/index.lock'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Docker
+alias drmi='$ docker rmi $(docker images -f "dangling=true" -q) --force'
+alias di='docker images'
+alias dps='docker container ls -a'
+alias dc='docker compose'
